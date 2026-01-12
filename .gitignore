@@ -1,0 +1,6 @@
+*.sqlite
+*_PARTS_ONLY.csv
+*_PDF_*.csv
+_MANUALS/
+__pycache__/
+.env
