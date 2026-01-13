@@ -1,19 +1,25 @@
-# Parts Intelligence Engine
+---
 
-The Parts Intelligence Engine converts unstructured OEM parts manuals (PDFs, XMLs, and sidecar files) into a structured, queryable database. It automatically extracts part numbers, descriptions, model and serial applicability, and source locations, then stores everything in a local SQLite database that can be searched, exported, and extended with distributor cross-references.
+## Outputs
+
+After running, you will have:
+
+### `parts_brain.sqlite`
+A relational SQLite database containing every extracted part number, description, model, serial range, and source document.
+
+### `parts_export.xlsx`
+A human-readable export of the database, automatically split into multiple sheets if it exceeds Excel’s row limits.
+
+The SQLite file is the authoritative **“parts brain.”**  
+Excel is just a view.
 
 ---
 
-## What it does
+## Commercial Use
 
-This project ingests large collections of OEM parts manuals and builds a machine-readable **“parts brain.”**  
-Instead of hunting through thousands of PDFs, you get a normalized database that knows which parts belong to which machines, where they appear in the manuals, and how they relate to specific models and serial ranges.
+This repository contains the open-core indexing engine.
 
----
+Production datasets, OEM-normalized part libraries, distributor cross-references (for example TVH, OEM supersessions), and hosted deployments are available commercially.
 
-## How to run
-
-```bash
-pip install pdfplumber openpyxl tqdm
-python classify_manuals.py
-python build_parts_brain.py
+For licensing, enterprise use, or hosted solutions, contact:  
+**nickofnashhh@gmail.com*)
